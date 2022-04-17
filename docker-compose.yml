@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web-example:
+    image: yeasy/simple-web
+  nginx-proxy:
+    image: beautyyu/nginx-proxy
+    ports:
+      - 1234:80
+    links:
+      - web-example:web
+    environment:
+      FORWARD_PORT: 80
+      USER: "admin"
+      PASS: "admin"

@@ -6,4 +6,4 @@ RUN apt-get update -y \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
 COPY auth.conf auth.htpasswd launch.sh ./
-CMD ["/bin/sh ./launch.sh"]
+CMD ["chmod 777 ./launch.sh && ./launch.sh"]
